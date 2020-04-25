@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = function (api, opts = {}) {
   const env = process.env.BABEL_ENV || process.env.NODE_ENV
 
