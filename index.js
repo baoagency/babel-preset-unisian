@@ -1,6 +1,8 @@
 const path = require('path')
 
 module.exports = function (api, opts = {}) {
+  api.cache(true)
+
   const env = process.env.BABEL_ENV || process.env.NODE_ENV
 
   const isEnvDevelopment = env === 'development'
