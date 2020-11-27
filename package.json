@@ -8,17 +8,20 @@
     "url": "git+https://github.com/baoagency/babel-preset-unisian.git"
   },
   "dependencies": {
-    "@babel/core": "7.9.0",
-    "@babel/plugin-proposal-class-properties": "7.8.3",
-    "@babel/plugin-proposal-decorators": "7.8.3",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "7.8.3",
-    "@babel/plugin-proposal-numeric-separator": "7.8.3",
-    "@babel/plugin-proposal-optional-chaining": "7.9.0",
-    "@babel/plugin-transform-flow-strip-types": "7.9.0",
-    "@babel/plugin-transform-runtime": "7.9.0",
-    "@babel/preset-env": "7.9.0",
-    "@babel/preset-typescript": "7.9.0",
-    "@babel/runtime": "7.9.0",
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.12.1",
+    "@babel/plugin-proposal-numeric-separator": "7.12.7",
+    "@babel/plugin-proposal-optional-chaining": "7.12.7",
+    "@babel/plugin-proposal-private-methods": "^7.12.1",
+    "@babel/plugin-transform-flow-strip-types": "7.12.1",
+    "@babel/plugin-transform-react-display-name": "7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "7.12.7",
+    "@babel/preset-react": "7.12.7",
+    "@babel/preset-typescript": "7.12.7",
+    "@babel/runtime": "7.12.5",
     "babel-plugin-transform-react-remove-prop-types": "0.4.24"
   }
 }
