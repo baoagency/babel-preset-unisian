@@ -9,16 +9,6 @@ module.exports = function (api, opts = {}) {
   const isEnvProduction = env === 'production'
   const isEnvTest = env === 'test'
 
-  if (!isEnvDevelopment && !isEnvProduction && !isEnvTest) {
-    throw new Error(
-      'Using `babel-preset-react-app` requires that you specify `NODE_ENV` or ' +
-      '`BABEL_ENV` environment variables. Valid values are "development", ' +
-      '"test", and "production". Instead, received: ' +
-      JSON.stringify(env) +
-      '.',
-    )
-  }
-
   const areHelpersEnabled = false
   const useAbsoluteRuntime = true
 
@@ -56,17 +46,6 @@ module.exports = function (api, opts = {}) {
           exclude: ['transform-typeof-symbol'],
         },
       ],
-      [
-        require('@babel/preset-react').default,
-        {
-          // Adds component stack to warning messages
-          // Adds __self attribute to JSX which React will use for some warnings
-          development: isEnvDevelopment || isEnvTest,
-          // Will use the native built-in instead of trying to polyfill
-          // behavior for any plugins that require one.
-          useBuiltIns: true,
-        },
-      ],
     ].filter(Boolean),
     plugins: [
       [
@@ -94,13 +73,6 @@ module.exports = function (api, opts = {}) {
           // the correct version is used
           // https://github.com/babel/babel/blob/090c364a90fe73d36a30707fc612ce037bdbbb24/packages/babel-plugin-transform-runtime/src/index.js#L35-L42
           absoluteRuntime: absoluteRuntimePath,
-        },
-      ],
-      isEnvProduction && [
-        // Remove PropTypes from production build
-        require('babel-plugin-transform-react-remove-prop-types').default,
-        {
-          removeImport: true,
         },
       ],
       // Optional chaining and nullish coalescing are supported in @babel/preset-env,
